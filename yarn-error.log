@@ -1,30 +1,20 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Users\julio\.node\corepack\yarn\1.22.15\bin\yarn.js add swagget-ui-express
+  C:\Program Files\nodejs\node.exe C:\Users\julio\.node\corepack\yarn\1.22.15\bin\yarn.js add pg
 
 PATH: 
-  C:\Users\julio\AppData\Local\oh-my-posh;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\dotnet\;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Users\julio\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Users\julio\AppData\Local\Microsoft\WindowsApps;C:\Users\julio\AppData\Local\Programs\Microsoft VS Code\bin;C:\src\flutter\bin;C:\Users\julio\AppData\Roaming\nvm;C:\Program Files\nodejs
+  C:\Users\julio\AppData\Local\oh-my-posh;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;%NVM_HOME%;%NVM_SYMLINK%;C:\Users\julio\AppData\Local\Microsoft\WindowsApps;C:\Users\julio\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\Git\bin;C:\Users\julio\Documents\flutter\bin;C:\Users\julio\AppData\Roaming\nvm;C:\Program Files\nodejs
 
 Yarn version: 
   1.22.15
 
 Node version: 
-  16.14.0
+  16.14.2
 
 Platform: 
   win32 x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/swagget-ui-express: Not found
-      at Request.params.callback [as _callback] (C:\Users\julio\.node\corepack\yarn\1.22.15\lib\cli.js:66140:18)
-      at Request.self.callback (C:\Users\julio\.node\corepack\yarn\1.22.15\lib\cli.js:140885:22)
-      at Request.emit (node:events:520:28)
-      at Request.<anonymous> (C:\Users\julio\.node\corepack\yarn\1.22.15\lib\cli.js:141857:10)
-      at Request.emit (node:events:520:28)
-      at IncomingMessage.<anonymous> (C:\Users\julio\.node\corepack\yarn\1.22.15\lib\cli.js:141779:12)
-      at Object.onceWrapper (node:events:639:28)
-      at IncomingMessage.emit (node:events:532:35)
-      at endReadableNT (node:internal/streams/readable:1346:12)
-      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+  Error: EPERM: operation not permitted, unlink 'C:\Users\julio\Documents\Projetos\aulas rocketseat\rs-node-rentx\node_modules\.bin\ts-node-dev'
 
 npm manifest: 
   {
@@ -39,11 +29,13 @@ npm manifest:
       "csv-parse": "^5.0.4",
       "express": "^4.17.3",
       "multer": "^1.4.4",
+      "swagger-ui-express": "^4.3.0",
       "uuid": "^8.3.2"
     },
     "devDependencies": {
       "@types/express": "^4.17.13",
       "@types/multer": "^1.4.7",
+      "@types/swagger-ui-express": "^4.1.3",
       "@types/uuid": "^8.3.4",
       "@typescript-eslint/eslint-plugin": "^5.14.0",
       "@typescript-eslint/parser": "^5.14.0",
@@ -206,6 +198,14 @@ Lockfile:
     version "0.0.30"
     resolved "https://registry.yarnpkg.com/@types/strip-json-comments/-/strip-json-comments-0.0.30.tgz#9aa30c04db212a9a0649d6ae6fd50accc40748a1"
     integrity sha512-7NQmHra/JILCd1QqpSzl8+mJRc8ZHz3uDm8YV1Ks9IhK0epEiTw8aIErbvH9PI+6XbqhyIQy3462nEsn7UVzjQ==
+  
+  "@types/swagger-ui-express@^4.1.3":
+    version "4.1.3"
+    resolved "https://registry.yarnpkg.com/@types/swagger-ui-express/-/swagger-ui-express-4.1.3.tgz#7adbbbf5343b45869debef1e9ff39c9ba73e380f"
+    integrity sha512-jqCjGU/tGEaqIplPy3WyQg+Nrp6y80DCFnDEAvVKWkJyv0VivSSDCChkppHRHAablvInZe6pijDFMnavtN0vqA==
+    dependencies:
+      "@types/express" "*"
+      "@types/serve-static" "*"
   
   "@types/uuid@^8.3.4":
     version "8.3.4"
@@ -1934,6 +1934,18 @@ Lockfile:
     version "1.0.0"
     resolved "https://registry.yarnpkg.com/supports-preserve-symlinks-flag/-/supports-preserve-symlinks-flag-1.0.0.tgz#6eda4bd344a3c94aea376d4cc31bc77311039e09"
     integrity sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==
+  
+  swagger-ui-dist@>=4.1.3:
+    version "4.6.2"
+    resolved "https://registry.yarnpkg.com/swagger-ui-dist/-/swagger-ui-dist-4.6.2.tgz#3c6ac79108b67d37c76ac8f8bebf4b432ef81585"
+    integrity sha512-BSt+ukOGkGZ2uHV4jyyCAzt60ysyQpGZAAhtIh7AMHT4MH1xXGkoXm2tfr1oRqO1N4IEY6qqNAlmcfMo/dAYuw==
+  
+  swagger-ui-express@^4.3.0:
+    version "4.3.0"
+    resolved "https://registry.yarnpkg.com/swagger-ui-express/-/swagger-ui-express-4.3.0.tgz#226238ab231f7718f9109d63a66efc3a795618dd"
+    integrity sha512-jN46SEEe9EoXa3ZgZoKgnSF6z0w3tnM1yqhO4Y+Q4iZVc8JOQB960EZpIAz6rNROrDApVDwcMHR0mhlnc/5Omw==
+    dependencies:
+      swagger-ui-dist ">=4.1.3"
   
   text-table@^0.2.0:
     version "0.2.0"
